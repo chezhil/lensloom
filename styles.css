@@ -168,6 +168,25 @@ body {
   color: var(--teal);
   font-size: 14px;
   min-height: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--panel-border);
+  border-top-color: var(--teal);
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .result-count {
@@ -192,6 +211,11 @@ body {
   border-radius: var(--radius);
 }
 
+.error-state {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 .card {
   display: block;
   background: var(--panel);
@@ -201,6 +225,35 @@ body {
   text-decoration: none;
   color: var(--text);
   transition: border-color 0.15s ease, transform 0.15s ease;
+  animation: fade-in 0.3s ease backwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card.skeleton {
+  animation: none;
+  height: 200px;
+  background: linear-gradient(100deg, var(--panel) 30%, var(--panel-border) 45%, var(--panel) 60%);
+  background-size: 200% 100%;
+  animation: shimmer 1.3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 150% 0;
+  }
+  100% {
+    background-position: -50% 0;
+  }
 }
 
 .card:hover {

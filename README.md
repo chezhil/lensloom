@@ -1,6 +1,9 @@
 # LensLoom
 
-LensLoom is an image-search app: type a topic, and it will eventually weave together a responsive wall of matching images pulled from a free public API (no key required). This part of the project ships the scaffolded repo and a styled, non-functional search UI — searching and rendering come in Part 2.
+LensLoom is an image-search app: type a topic, and it weaves together a responsive wall of matching images pulled from the Wikimedia Commons API (free, no key required). It handles loading, empty, and error states, and is deployed live.
+
+🔗 Live app: https://chezhil.github.io/lensloom/
+💻 Source: https://github.com/chezhil/lensloom
 
 Two design decisions:
 
