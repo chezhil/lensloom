@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LensLoom</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">◈</span>
+        <div>
+          <h1>LensLoom</h1>
+          <p class="tagline">Weave any word into a wall of pictures.</p>
+        </div>
+      </div>
+
+      <form id="search-form" class="search-form">
+        <label for="search-input">Search for images</label>
+        <input
+          id="search-input"
+          type="search"
+          name="query"
+          placeholder="e.g. northern lights"
+          autocomplete="off"
+        />
+        <div class="form-actions">
+          <button id="search-button" type="submit">Weave</button>
+          <button id="clear-button" type="button">Clear</button>
+        </div>
+      </form>
+
+      <div class="chip-row" aria-label="Quick search suggestions">
+        <button class="chip" type="button" data-query="nature">Nature</button>
+        <button class="chip" type="button" data-query="cities">Cities</button>
+        <button class="chip" type="button" data-query="animals">Animals</button>
+        <button class="chip" type="button" data-query="space">Space</button>
+      </div>
+
+      <p class="sidebar-footer">Images will load from a free public API — no key required.</p>
+    </aside>
+
+    <main class="content">
+      <div class="content-header">
+        <p id="status" class="status"></p>
+        <p id="result-count" class="result-count">Showing 0 results</p>
+      </div>
+
+      <section id="results" class="results" aria-live="polite">
+        <p id="empty-state" class="empty-state">Search to see results</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
